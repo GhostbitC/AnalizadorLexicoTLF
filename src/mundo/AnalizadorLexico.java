@@ -241,11 +241,7 @@ public class AnalizadorLexico {
 					
 				}else {
 					
-					if(cod.charAt(i)==':') {
-						j--;
-					}
-					
-					if(cod.charAt(j)=='←') {
+					if(j<cod.length() && cod.charAt(j)=='←') {
 						
 						j++;
 						
@@ -327,7 +323,7 @@ public class AnalizadorLexico {
 			
 			j=i+1;
 			
-			if(cod.charAt(j)=='[' || cod.charAt(j)=='{' || cod.charAt(j)=='(') {
+			if(j<cod.length() && cod.charAt(j)=='[' || cod.charAt(j)=='{' || cod.charAt(j)=='(') {
 				
 				j++;
 		        lex =  cod.substring(i, j);			    
@@ -349,7 +345,7 @@ public class AnalizadorLexico {
 			
 			j=i+1;
 			
-			if(cod.charAt(j)=='►') {
+			if(j<cod.length() && cod.charAt(j)=='►') {
 				
 				j++;
 		        lex =  cod.substring(i, j);			    
