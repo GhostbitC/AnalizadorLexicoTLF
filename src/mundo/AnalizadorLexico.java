@@ -245,7 +245,7 @@ public class AnalizadorLexico {
 						
 						j++;
 						
-						if(cod.charAt(j)=='→') {
+						if(j<cod.length() && cod.charAt(j)=='→') {
 							
 							j++;
 					        lex =  cod.substring(i, j);			    
@@ -271,11 +271,11 @@ public class AnalizadorLexico {
 			
 			j=i+1;
 			
-			if(cod.charAt(j)=='y' || cod.charAt(j)=='o' || cod.charAt(j)=='!') {
+			if(j<cod.length() && cod.charAt(j)=='y' || cod.charAt(j)=='o' || cod.charAt(j)=='!') {
 				
 				j++;
 				
-				if(cod.charAt(j)=='@') {
+				if(j<cod.length() && cod.charAt(j)=='@') {
 					
 					j++;
 			        lex =  cod.substring(i, j);			    
