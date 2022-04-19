@@ -94,6 +94,38 @@ public class AnalizadorLexico {
 		if ( token != null )
 			return token;
 		
+		// Intenta extraer un separador
+		token = extraerSeparador( cod, i);
+		if (token != null)
+			return token;
+					
+		// Intenta extraer palabra reservada para caracteres
+		token = extraerReservadaCaracter( cod, i);
+		if (token != null)
+			return token;
+							
+		// Intenta extraer palabra reservada para cadenas
+		token = extraerReservadaCadena(cod, i);
+		if (token != null)
+			return token;
+		
+		// Intenta extraer palabra reservada para cadenas
+		token = extraerReservadaHilo(cod, i);
+		if (token != null)
+		return token;
+			
+		// Intenta extraer palabra reservada para cadenas
+		token = extraerReservadaBreak(cod, i);
+	    if (token != null)
+	    	return token;
+
+		// Intenta extraer un terminal
+		token = extraerTerminal( cod, i);
+	    if (token != null)
+	    	return token;
+						
+		
+		
 		// Intenta extraer un identificador
 		token = extraerIdentificador(cod, i);
 		if ( token != null )
@@ -329,6 +361,166 @@ public class AnalizadorLexico {
 		
 		return null;
 	}
+	
+	  /**
+     * Intenta extraer un terminal de la cadena cod a partir de la posición i,
+     * basándose en el Autómata
+     * @param cod - código al cual se le va a intentar extraer un identficador - codigo!=null
+     * @param i - posición a partir de la cual se va a intentar extraer un identificador  - 0<=indice<codigo.length()
+     * @return el token terminal o NULL, si el token en la posición dada no es un identificador. El Token se compone de 
+     * el lexema, el tipo y la posición del siguiente lexema.
+     */
+		
+	public Token extraerTerminal ( String cod, int i)
+	{
+	
+		
+		if( cod.charAt(i)=='.' ){
+			
+			int j=i+1;
+	        String lex =  cod.substring( i, j);			    
+			Token token = new Token( lex, Token.TERMINAL, j );
+			return token;
+		
+	
+	}	
+	return null;
+	}
+	
+	  /**
+     * Intenta extraer un separador de la cadena cod a partir de la posición i,
+     * basándose en el Autómata
+     * @param cod - código al cual se le va a intentar extraer un identficador - codigo!=null
+     * @param i - posición a partir de la cual se va a intentar extraer un separadpr  - 0<=indice<codigo.length()
+     * @return el token separador o NULL, si el token en la posición dada no es un identificador. El Token se compone de 
+     * el lexema, el tipo y la posición del siguiente lexema.
+     */
+		
+	public Token extraerSeparador ( String cod, int i)
+	{
+		if( cod.charAt(i)=='~' ){
+			
+				int j=i+1;
+		        String lex =  cod.substring( i, j);			    
+				Token token = new Token( lex, Token.SEPARADOR, j );
+				return token;
+			
+		
+		}	
+		return null;
+	}
+	
+	
+	 /**
+     * Intenta extraer palabra reservada para  caracteres de la cadena  cod a partir de la posición i,
+     * basándose en el Autómata
+     * @param cod - código al cual se le va a intentar extraer la palabra reservada para caracteres - codigo!=null
+     * @param i - posición a partir de la cual se va a intentar extraer la palabra reservada para  caracteres  - 0<=i<codigo.length()
+     * @return el token palabra reservada para cadena de caracteres o NULL, si el token en la posición dada no es parte de la palabra reservada para caracteres. El Token se compone de 
+     * el lexema, el tipo y la posición del siguiente lexema.
+     */
+	public Token extraerReservadaCaracter ( String cod, int i )
+	{
+		if( cod.charAt(i) =='c' && esLetra(cod.charAt(i))){
+			int j=i+1;
+			if( j<cod.length() && cod.charAt(j) =='h'){		
+				j++;
+				
+			        String lex =  cod.substring( i, j);			    
+					Token token = new Token( lex, Token.RESERVADA_CARACTER, j );
+					return token;
+				}
+			
+		}
+		return null;
+	}
+	
+	 /**
+     * Intenta extraer palabra reservada para cadena de caracteres de la cadena  cod a partir de la posición i,
+     * basándose en el Autómata
+     * @param cod - código al cual se le va a intentar extraer la palabra reservada para cadena de caracteres - codigo!=null
+     * @param i - posición a partir de la cual se va a intentar extraer la palabra reservada para cadena de caracteres  - 0<=i<codigo.length()
+     * @return el token palabra reservada para cadena de caracteres o NULL, si el token en la posición dada no es parte de la palabra reservada para cadena de caracteres. El Token se compone de 
+     * el lexema, el tipo y la posición del siguiente lexema.
+     */
+	public Token extraerReservadaCadena ( String cod, int i )
+	{
+		if( cod.charAt(i) =='w' && esLetra(cod.charAt(i))){
+			int j=i+1;
+			if( j<cod.length() && cod.charAt(j) =='r'){		
+				j++;
+				
+				if( j<cod.length() && cod.charAt(j) =='d'){		
+					j++;
+			        String lex =  cod.substring( i, j);			    
+					Token token = new Token( lex, Token.RESERVADA_CADENA, j );
+					return token;
+				}
+			}
+			
+		}
+		return null;
+	}
+	
+	 /**
+     * Intenta extraer palabra reservada para hilos de la cadena  cod a partir de la posición i,
+     * basándose en el Autómata
+     * @param cod - código al cual se le va a intentar extraer la palabra reservada para hilos - codigo!=null
+     * @param i - posición a partir de la cual se va a intentar extraer la palabra reservada para  hilos - 0<=i<codigo.length()
+     * @return el token palabra reservada para cadena de caracteres o NULL, si el token en la posición dada no es parte de la palabra reservada para hilos. El Token se compone de 
+     * el lexema, el tipo y la posición del siguiente lexema.
+     */
+	public Token extraerReservadaHilo( String cod, int i )
+	{
+		if( cod.charAt(i) =='f' && esLetra(cod.charAt(i))){
+			int j=i+1;
+			if( j<cod.length() && cod.charAt(j) =='i'){		
+				j++;
+				
+				if( j<cod.length() && cod.charAt(j) =='l'){		
+					j++;
+			        String lex =  cod.substring( i, j);			    
+					Token token = new Token( lex, Token.RESERVADA_HILO, j );
+					return token;
+				}
+			}
+			
+		}
+		return null;
+	}
+	
+	 /**
+     * Intenta extraer palabra reservada para break	  cod a partir de la posición i,
+     * basándose en el Autómata
+     * @param cod - código al cual se le va a intentar extraer la palabra reservada para break - codigo!=null
+     * @param i - posición a partir de la cual se va a intentar extraer la palabra reservada para  break - 0<=i<codigo.length()
+     * @return el token palabra reservada para cadena de caracteres o NULL, si el token en la posición dada no es parte de la palabra reservada para break El Token se compone de 
+     * el lexema, el tipo y la posición del siguiente lexema.
+     */
+	public Token extraerReservadaBreak( String cod, int i )
+	{
+		if( cod.charAt(i) =='j' && esLetra(cod.charAt(i))){
+			int j=i+1;
+			if( j<cod.length() && cod.charAt(j) =='u'){		
+				j++;
+				
+				if( j<cod.length() && cod.charAt(j) =='m'){		
+					j++;
+					
+					if( j<cod.length() && cod.charAt(j) =='p'){		
+					j++;
+			        String lex =  cod.substring( i, j);			    
+					Token token = new Token( lex, Token.RESERVADA_BREAK, j );
+					return token;
+					}
+				}
+			}
+			
+		}
+		return null;
+	}
+	
+	
 	
     /**
      * Intenta extraer un identificador de la cadena cod a partir de la posición i,

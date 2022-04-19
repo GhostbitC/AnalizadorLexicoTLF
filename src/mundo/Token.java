@@ -31,6 +31,13 @@ public class Token {
     final public static String SIMBOLOABRIR = "Simbolo de abrir";
     final public static String SIMBOLOCERRAR = "Simbolo de cerrar";
     final public static String IDENTIFICADOR = "Identificador";
+    final public static String TERMINAL = "Terminal";
+    final public static String SEPARADOR = "Separador de sentencia";
+    final public static String RESERVADA_CARACTER = "Palabra reservada para los caracteres";
+    final public static String RESERVADA_CADENA = "Palabra reservada para las cadenas";
+    final public static String RESERVADA_BREAK = "Palabra reservada para break";
+    final public static String RESERVADA_HILO = "Palabra reservada para hilos";
+ 
     final public static String NORECONOCIDO = "No reconocido";
  
     // -----------------------------------------------------------------
