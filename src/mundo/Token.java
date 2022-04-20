@@ -43,7 +43,13 @@ public class Token {
 	final public static String RESERVADA_CADENA = "Palabra reservada para las cadenas";
 	final public static String RESERVADA_BREAK = "Palabra reservada para break";
 	final public static String RESERVADA_HILO = "Palabra reservada para hilos";
-
+    final public static String PALABRARESERVADA_CICLO = "Palabra reservada ciclo";
+    final public static String PALABRARESERVADA_DESICION ="Palabra reservada desición";
+    final public static String PALABRARESERVADA_CLASE= "Palabra reservada clase";
+    final public static String IDENTIFICADORVARIABLE="Identificador nombre de una variable";
+    final public static String IDENTIFICADORMETODO="Identificador nombre de un metodo";
+    final public static String IDENTIFICADORCLASE="Identificador nombre de una clase";
+    
 	final public static String NORECONOCIDO = "No reconocido";
 
 	// -----------------------------------------------------------------
