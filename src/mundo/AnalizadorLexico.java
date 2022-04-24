@@ -421,7 +421,7 @@ public class AnalizadorLexico {
 	 * 
 	 * @param cod - código al cual se le va a intentar extraer el operador aditivo -
 	 *            codigo!=null
-	 * @param i   - posición a partir de la cual se va a intentar extraer el
+	 * @param i - posición a partir de la cual se va a intentar extraer el
 	 *            operador aditivo - 0<=i<codigo.length()
 	 * @return el token operador aditivo o NULL, si el token en la posición dada no
 	 *         es un operador aditivo.El Token se compone de el lexema, el tipo y la
@@ -450,6 +450,19 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	
+	/**
+	 * Intenta extraer un operador relacional de la cadena cod a partir de la posición
+	 * i, basándose en el Autómata
+	 * 
+	 * @param cod - código al cual se le va a intentar extraer el operador relacional -
+	 *            codigo!=null
+	 * @param i - posición a partir de la cual se va a intentar extraer el
+	 *            operador relacional - 0<=i<codigo.length()
+	 * @return el token operador relacional o NULL, si el token en la posición dada no
+	 *         es un operador relacional. El Token se compone de el lexema, el tipo y la
+	 *         posición del siguiente lexema.
+	 */
 	public Token extraerOperadorRelacional(String cod, int i) {
 
 		int j;
@@ -508,6 +521,19 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	
+	/**
+	 * Intenta extraer un operador lógico de la cadena cod a partir de la posición
+	 * i, basándose en el Autómata
+	 * 
+	 * @param cod - código al cual se le va a intentar extraer el operador lógico -
+	 *            codigo!=null
+	 * @param i - posición a partir de la cual se va a intentar extraer el
+	 *            operador lógico - 0<=i<codigo.length()
+	 * @return el token operador lógico o NULL, si el token en la posición dada no
+	 *         es un operador lógico. El Token se compone de el lexema, el tipo y la
+	 *         posición del siguiente lexema.
+	 */
 	public Token extraerOperadorLogico(String cod, int i) {
 
 		int j;
@@ -541,8 +567,8 @@ public class AnalizadorLexico {
 	 * 
 	 * @param cod - código al cual se le va a intentar extraer el operador de
 	 *            asignación - codigo!=null
-	 * @param i   - posición a partir de la cual se va a intentar extraer el
-	 *            operador de asingación - 0<=i<codigo.length()
+	 * @param i - posición a partir de la cual se va a intentar extraer el
+	 *            operador de asignación - 0<=i<codigo.length()
 	 * @return el token operador asignación o NULL, si el token en la posición dada
 	 *         no es un operador de asignación. El Token se compone de el lexema, el
 	 *         tipo y la posición del siguiente lexema.
@@ -561,6 +587,18 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	/**
+	 * Intenta extraer el símbolo de abrir de la cadena cod a partir de la
+	 * posición i, basándose en el Autómata
+	 * 
+	 * @param cod - código al cual se le va a intentar extraer el símbolo de
+	 *            abrir - codigo!=null
+	 * @param i - posición a partir de la cual se va a intentar extraer el
+	 *            símbolo de abrir - 0<=i<codigo.length()
+	 * @return el token del símbolo de abrir o NULL, si el token en la posición dada
+	 *         no es el símbolo de abrir. El Token se compone de el lexema, el
+	 *         tipo y la posición del siguiente lexema.
+	 */
 	public Token extraerSimboloAbrir(String cod, int i) {
 
 		int j;
@@ -583,6 +621,19 @@ public class AnalizadorLexico {
 		return null;
 	}
 
+	
+	/**
+	 * Intenta extraer el símbolo de cerrar de la cadena cod a partir de la
+	 * posición i, basándose en el Autómata
+	 * 
+	 * @param cod - código al cual se le va a intentar extraer el símbolo de
+	 *            cerrar - codigo!=null
+	 * @param i - posición a partir de la cual se va a intentar extraer el
+	 *            símbolo de cerrar - 0<=i<codigo.length()
+	 * @return el token del símbolo de cerrar o NULL, si el token en la posición dada
+	 *         no es el símbolo de cerrar. El Token se compone de el lexema, el
+	 *         tipo y la posición del siguiente lexema.
+	 */
 	public Token extraerSimboloCerrar(String cod, int i) {
 
 		int j;
