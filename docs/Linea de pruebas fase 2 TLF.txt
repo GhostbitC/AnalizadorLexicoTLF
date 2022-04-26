@@ -1,4 +1,4 @@
-$+$-$*$/$%→←→:←::::←→@y@@o@@!@:◄[◄{◄(]►}►)►
+$+$-$*$/$%→←→:←::::←→@y@@o@@!@:◄[◄{◄(]►}►)►chwrdfiljump.~
 
 CATEGORIA             , TOKEN         , EXPRESION REGULAR, MI_LENGUAJE, SIG_JAVA
 Operador aditivo      , Suma          , $+               , $+         , +
@@ -18,8 +18,14 @@ Operador lógico       , Operador not  , @!@              , @!@        , !
 Operador de asignación, Asignación    , :                , :          , =
 Símbolo de abrir      , Corchete      , ◄[               , ◄[         , [
 Símbolo de abrir      , Llave         , ◄{               , ◄{         , {
-Símbolo de abrir      , Paréntesis    , ◄[               , ◄[         , (
+Símbolo de abrir      , Paréntesis    , ◄(               , ◄(         , (
 Símbolo de cerrar     , Corchete      , ]►               , ]►         , ]
 Símbolo de cerrar     , Llave         , }►               , }►         , }
 Símbolo de cerrar     , Paréntesis    , )►               , )►         , )
+Palabras reservadas   ,               , ch               , ch         , char
+Palabras reservadas   ,               , wrd              , wrd        , String
+Palabras reservadas   ,               , fil              , fil        , Thread
+Palabras reservadas   , break         , break            , jump       , break
+Terminal              , Punto         , .                , .          , ;
+Separador de sentencia, Virguilla     , ~                , ~          , ,
 
