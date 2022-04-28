@@ -1,25 +1,36 @@
-$+$-$*$/$%→←→:←::::←→@y@@o@@!@:◄[◄{◄(]►}►)►
+$+$-$*$/$%→←→:←::::←→@y@@o@@!@:◄[◄{◄(]►}►)►clswhenduringMetodo1clase#variableInFl25In25.800Fl<<Hola Mundo>><H>
 
-CATEGORIA             , TOKEN         , EXPRESION REGULAR, MI_LENGUAJE, SIG_JAVA
-Operador aditivo      , Suma          , $+               , $+         , +
-Operador aditivo      , Resta         , $-               , $-         , -
-Operador aditivo      , Multiplicación, $*               , $*         , *
-Operador aditivo      , División      , $/               , $/         , /
-Operador aditivo      , Módulo        , $%               , $%         , %
-Operador relacional   , Mayor que     , →                , →          , >
-Operador relacional   , Menor que     , ←                , ←          , <
-Operador relacional   , Mayor o igual , →:               , →:         , >=
-Operador relacional   , Menor o igual , ←:               , ←:         , <=
-Operador relacional   , Igual que     , ::               , ::         , ==
-Operador relacional   , Diferente de  , :←→              , :←→        , !=
-Operador lógico       , Operador and  , @y@              , @y@        , &&
-Operador lógico       , Operador or   , @o@              , @o@        , ||
-Operador lógico       , Operador not  , @!@              , @!@        , !
-Operador de asignación, Asignación    , :                , :          , =
-Símbolo de abrir      , Corchete      , ◄[               , ◄[         , [
-Símbolo de abrir      , Llave         , ◄{               , ◄{         , {
-Símbolo de abrir      , Paréntesis    , ◄[               , ◄[         , (
-Símbolo de cerrar     , Corchete      , ]►               , ]►         , ]
-Símbolo de cerrar     , Llave         , }►               , }►         , }
-Símbolo de cerrar     , Paréntesis    , )►               , )►         , )
-
+CATEGORIA             , TOKEN             , EXPRESION REGULAR, MI_LENGUAJE, SIG_JAVA
+Operador aditivo      , Suma              , $+                                  , $+              , +
+Operador aditivo      , Resta             , $-                                  , $-              , -
+Operador aditivo      , Multiplicación    , $*                                  , $*              , *
+Operador aditivo      , División          , $/                                  , $/              , /
+Operador aditivo      , Módulo            , $%                                  , $%              , %
+Operador relacional   , Mayor que         , →                                   , →               , >
+Operador relacional   , Menor que         , ←                                   , ←               , <
+Operador relacional   , Mayor o igual     , →:                                  , →:              , >=
+Operador relacional   , Menor o igual     , ←:                                  , ←:              , <=
+Operador relacional   , Igual que         , ::                                  , ::              , ==
+Operador relacional   , Diferente de      , :←→                                 , :←→             , !=
+Operador lógico       , Operador and      , @y@                                 , @y@             , &&
+Operador lógico       , Operador or       , @o@                                 , @o@             , ||
+Operador lógico       , Operador not      , @!@                                 , @!@             , !
+Operador de asignación, Asignación        , :                                   , :               , =
+Símbolo de abrir      , Corchete          , ◄[                                  , ◄[              , [
+Símbolo de abrir      , Llave             , ◄{                                  , ◄{              , {
+Símbolo de abrir      , Paréntesis        , ◄[                                  , ◄[              , (
+Símbolo de cerrar     , Corchete          , ]►                                  , ]►              , ]
+Símbolo de cerrar     , Llave             , }►                                  , }►              , }
+Símbolo de cerrar     , Paréntesis        , )►                                  , )►              , )
+Expresiones           , Bucle             , during                              , during          , for
+Expresiones           , Desicion          , when                                , when            , if
+Expresiones           , Clase             , cls                                 , cls             , class
+Identificadores       , Nombres variables , #NN*(N* U DD*)                      , #variable1      , variable1
+Identificadores       , Nombres metodo    , MNN*(N* U DD*)                      , Metodo1         , metodo1
+Identificadores       , Nombres clase     , NN*(N* U DD*)                       , clase1          , Clase1    
+Palabra reservada     , Palabra enteros   , In                                  , In              , int
+Palabra reservada     , Palabra reales    , Fl                                  , Fl              , float
+Valor Asignacion      , Enteros           , DD*In                               , 25In            , 25
+Valor Asignacion      , Reales            , DD*.DD*Fl                           , 25.800Fl        , 25.800
+Valor Asignacion      , Cadenas           , <<((..)(n u t u b u <) u COS)*>>    , <<Hola Mundo>>  , "Hola Mundo"
+Valor Asignacion      , Caracter          , <(..)(n u t u b u <) u COS>         , <H>             , 'H'
