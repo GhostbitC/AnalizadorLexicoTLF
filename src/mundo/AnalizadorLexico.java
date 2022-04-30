@@ -143,12 +143,12 @@ public class AnalizadorLexico {
 		if (token != null)
 			return token;
 
-		// Intenta extraer palabra reservada para cadenas
+		// Intenta extraer palabra reservada para hilos
 		token = extraerReservadaHilo(cod, i);
 		if (token != null)
 			return token;
 
-		// Intenta extraer palabra reservada para cadenas
+		// Intenta extraer palabra reservada para break
 		token = extraerReservadaBreak(cod, i);
 		if (token != null)
 			return token;
@@ -769,7 +769,7 @@ public class AnalizadorLexico {
 	 *         del siguiente lexema.
 	 */
 	public Token extraerReservadaCaracter(String cod, int i) {
-		if (cod.charAt(i) == 'c' && esLetra(cod.charAt(i))) {
+		if (cod.charAt(i) == 'c' ) {
 			int j = i + 1;
 			if (j < cod.length() && cod.charAt(j) == 'h') {
 				j++;
@@ -797,7 +797,7 @@ public class AnalizadorLexico {
 	 *         posición del siguiente lexema.
 	 */
 	public Token extraerReservadaCadena(String cod, int i) {
-		if (cod.charAt(i) == 'w' && esLetra(cod.charAt(i))) {
+		if (cod.charAt(i) == 'w' ) {
 			int j = i + 1;
 			if (j < cod.length() && cod.charAt(j) == 'r') {
 				j++;
@@ -828,7 +828,7 @@ public class AnalizadorLexico {
 	 *         siguiente lexema.
 	 */
 	public Token extraerReservadaHilo(String cod, int i) {
-		if (cod.charAt(i) == 'f' && esLetra(cod.charAt(i))) {
+		if (cod.charAt(i) == 'f' ) {
 			int j = i + 1;
 			if (j < cod.length() && cod.charAt(j) == 'i') {
 				j++;
@@ -859,7 +859,7 @@ public class AnalizadorLexico {
 	 *         siguiente lexema.
 	 */
 	public Token extraerReservadaBreak(String cod, int i) {
-		if (cod.charAt(i) == 'j' && esLetra(cod.charAt(i))) {
+		if (cod.charAt(i) == 'j') {
 			int j = i + 1;
 			if (j < cod.length() && cod.charAt(j) == 'u') {
 				j++;
