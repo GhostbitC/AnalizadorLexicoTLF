@@ -7,6 +7,10 @@
  * Ejercicio: AnalizadorLexico
  * Diseño original por: Leonardo A. Hernández R. - Agosto 2008 - Marzo 2009
  * Modificado y usado por: Claudia E. Quiceno R- Julio 2021
+ * 
+ * Modificado y usado por: Braian Camilo Piedrahita Rodriguez, Esteban Sanchez Carranza
+ * Daniel Ceballos Giraldo y Angy Paola Tabares Acevedo - Abril 2022
+ * 
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 
@@ -95,7 +99,7 @@ public class AnalizadorLexico {
 			return token;
 
 		// Intenta extraer un operador aditivo
-		token = extraerOperadorAditivo(cod, i);
+		token = extraerOperadorAritmetico(cod, i);
 		if (token != null)
 			return token;
 
@@ -463,18 +467,18 @@ public class AnalizadorLexico {
 	}
 
 	/**
-	 * Intenta extraer un operador aditivo de la cadena cod a partir de la posición
+	 * Intenta extraer un operador aritmético de la cadena cod a partir de la posición
 	 * i, basándose en el Autómata
 	 * 
-	 * @param cod - código al cual se le va a intentar extraer el operador aditivo -
+	 * @param cod - código al cual se le va a intentar extraer el operador aritmético -
 	 *            codigo!=null
 	 * @param i   - posición a partir de la cual se va a intentar extraer el
-	 *            operador aditivo - 0<=i<codigo.length()
-	 * @return el token operador aditivo o NULL, si el token en la posición dada no
-	 *         es un operador aditivo.El Token se compone de el lexema, el tipo y la
+	 *            operador aritmético - 0<=i<codigo.length()
+	 * @return el token operador aritmético o NULL, si el token en la posición dada no
+	 *         es un operador aritmético.El Token se compone de el lexema, el tipo y la
 	 *         posición del siguiente lexema.
 	 */
-	public Token extraerOperadorAditivo(String cod, int i) {
+	public Token extraerOperadorAritmetico(String cod, int i) {
 
 		int j;
 		String lex;
@@ -488,7 +492,7 @@ public class AnalizadorLexico {
 
 				j++;
 				lex = cod.substring(i, j);
-				Token token = new Token(lex, Token.OPERADORADITIVO, j);
+				Token token = new Token(lex, Token.OPERADORARITMETICO, j);
 				return token;
 			}
 

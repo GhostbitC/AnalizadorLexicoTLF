@@ -24,7 +24,7 @@ public class Token {
 	 * Constantes para modelar los posibles tipos de token que se van a analizar
 	 */
 	final public static String ENTERO = "Entero";
-	final public static String OPERADORADITIVO = "Operador aditivo";
+	final public static String OPERADORARITMETICO = "Operador aritmético";
 	final public static String OPERADORELACIONAL = "Operador relacional";
 	final public static String OPERADORLOGICO = "Operador lógico";
 	final public static String OPERADORASIGNACION = "Operador de asignación";
